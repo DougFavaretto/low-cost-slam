@@ -18,8 +18,6 @@ Este pacote ROS implementa uma solução de mapeamento e navegação para robôs
 | `simple_mapper.py` | Gera um mapa de ocupação simples baseado em dados do `LaserScan` e da odometria. Publica em `/simple_map`. |
 | `map_builder.py` | Cria uma trilha (trajetória) com base na odometria. Publica `Marker` em `/path_marker`. |
 
-## 🚀 Como Executar
-
 ### Pré-requisitos
 
 - ROS Noetic
