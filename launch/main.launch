@@ -1,0 +1,10 @@
+<launch>
+  <include file="$(find low-cost-slam)/launch/robot.launch" />
+  <include file="$(find low-cost-slam)/launch/rviz.launch" />
+
+  <!-- <node pkg="laser_filters" type="scan_to_scan_filter_chain" name="laser_filter">
+    <rosparam command="load" file="$(find low-cost-slam)/config/laser_filters.yaml" />
+    <remap from="scan" to="scan_raw" />
+    <remap from="scan_filtered" to="scan" />
+  </node> -->
+</launch>

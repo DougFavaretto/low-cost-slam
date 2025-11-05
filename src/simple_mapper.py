@@ -12,7 +12,7 @@ class SimpleMapper:
         rospy.init_node('simple_mapper')
         
         # Parâmetros do mapa
-        self.resolution = 0.05  # 5cm/cell
+        self.resolution = 0.1  # 5cm/cell
         self.width = 200        # 10m
         self.height = 200       # 10m
         self.origin_x = -5.0    # -5m
@@ -94,8 +94,12 @@ class SimpleMapper:
             
             # Verifica se está dentro dos limites do mapa
             if 0 <= grid_x < self.width and 0 <= grid_y < self.height:
-                # Marca o ponto como ocupado
-                self.grid[grid_y, grid_x] = 100
+                # Obstáculos entre 135cm e 150cm são marcados como livres (limite do sensor)
+                if 1 <= distance:
+                    self.grid[grid_y, grid_x] = 0  # Marca como livre
+                else:
+                    # Marca o ponto como ocupado
+                    self.grid[grid_y, grid_x] = 100
                 
                 # Raycasting - marca células entre o robô e o obstáculo como livres
                 self.mark_free_cells(self.robot_x, self.robot_y, x, y)

@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <package format="2">
-  <name>slow</name>
-  <version>0.0.0</version>
-  <description>The slow package</description>
+  <name>low-cost-slam</name>
+  <version>1.0.0</version>
+  <description>Enhanced low-cost SLAM package with wheel odometry</description>
 
   <!-- One maintainer tag required, multiple allowed, one person per tag -->
   <!-- Example:  -->
